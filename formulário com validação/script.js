@@ -1,3 +1,24 @@
+function bloqueiaEnter(input){
+input.addEventListener('keydown',(e) =>{
+    if (e.key === "Enter") {
+        e.preventDefault();
+        return false;
+    }
+    })
+}
+  
+function mostrarBotEnviar(input){
+    input.addEventListener('blur',() =>{
+         if (confirmSenhaInput.value !== '' ) {
+             botEnviar.classList.add('visible')
+         }else{
+             botEnviar.classList.remove('visible')
+         }
+     })
+     
+ }
+
+
 // ---------- VALIDAÇÃO USERNAME ---------- //
 let usernameLabel = document.querySelector('label[for="username"]');
 let usernameInput = document.getElementById("username");
@@ -35,6 +56,8 @@ usernameInput.addEventListener('change',(e)=>{
         usernameHelper.innerText = ''
     }
 })
+bloqueiaEnter(usernameInput)
+
 // ---------- VALIDAÇÃO EMAIL ---------- //
 let emailLabel = document.querySelector('label[for="email"]');
 let emailInput = document.getElementById("email");
@@ -67,24 +90,22 @@ emailInput.addEventListener('change',(e)=>{
 
     }
 })
+bloqueiaEnter(emailInput)
 
 // ---------- VALIDAÇÃO IDADE ---------- //
 let idadeLabel = document.querySelector('label[for="idade"]')
 let idadeInput = document.getElementById('idade')
 let idadeHelp = document.getElementById('idade-helper')
-let enviar = document.getElementById('enviar')
 
 // Validar valor do input
 idadeInput.addEventListener('change',(e)=>{
     let valor = e.target.value
     if (valor < 18) {
-        enviar.style.display = 'none'
         idadeInput.classList.add('error')
         idadeHelp.classList.add('visible')
         idadeInput.classList.remove('correct')
         idadeHelp.innerText = 'Só aceitamos maiores de 18 anos'
     } else {
-        enviar.style.display = 'block'
         idadeInput.classList.add('correct')
         idadeHelp.classList.remove('visible')
         idadeHelp.innerText = ''
@@ -95,6 +116,8 @@ idadeInput.addEventListener('change',(e)=>{
         idadeInput.classList.remove('error')
     }
 })
+
+bloqueiaEnter(idadeInput)
 
 // ---------- VALIDAÇÃO SENHA ---------- //
 let senhaLabel = document.querySelector('label[for="senha"]')
@@ -131,6 +154,8 @@ senhaInput.addEventListener('change',(e)=>{
         senhaInput.classList.remove('error')
         senhaHelp.classList.remove('visible')
         senhaHelp.innerText = ''
+        confirmSenhaLabel.style.display = 'block'
+        confirmSenhaInput.style.display = 'block'
     } else {
         senhaInput.classList.remove('correct')
         senhaInput.classList.add('error')
@@ -141,14 +166,20 @@ senhaInput.addEventListener('change',(e)=>{
         1 Letra maiúscula
         1 Caracter especial
         `
+        confirmSenhaLabel.style.display = 'none'
+        confirmSenhaInput.style.display = 'none'
     }
     if (senha === '') {
+        confirmSenhaInput.value = ''
+        confirmSenhaInput.classList.remove('error')
         senhaInput.classList.remove('correct')
         senhaInput.classList.remove('error')
         senhaHelp.classList.remove('visible')        
     }
     
 })
+bloqueiaEnter(senhaInput)
+
 
 let confirmSenhaLabel = document.querySelector('label[for="confirma-senha"]')
 let confirmSenhaInput = document.getElementById('confirma-senha')
@@ -177,11 +208,15 @@ confirmSenhaInput.addEventListener('change',(e) => {
         confirmSenhaInput.classList.add('error')
 
     }
+    
     if (senhaConfirmacao === '') {
         confirmSenhaInput.classList.remove('correct')
         confirmSenhaInput.classList.remove('error')
+    }  
 
+    if (senhaConfirmacao === senhaPrimeiroCampo) {
+        let botaoEnviar = document.getElementById('enviar');
+        botaoEnviar.removeAttribute('disabled');
     }
-
-    
 })
+bloqueiaEnter(confirmSenhaInput)
