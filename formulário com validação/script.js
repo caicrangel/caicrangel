@@ -220,3 +220,5 @@ confirmSenhaInput.addEventListener('change',(e) => {
     }
 })
 bloqueiaEnter(confirmSenhaInput)
+
+

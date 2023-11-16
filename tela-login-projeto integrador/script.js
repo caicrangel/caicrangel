@@ -45,3 +45,4 @@ function pegarUserPass(){
 		inputPass.value = ''
 	  }
 }
+

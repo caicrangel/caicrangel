@@ -39,7 +39,13 @@ form label {
   margin-top: 1.5rem;
 }
 
-form button {
+#botoes{
+  display: flex;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+#botoes button {
   width: 100px;
   height: 40px;
   margin-top: 2rem;
