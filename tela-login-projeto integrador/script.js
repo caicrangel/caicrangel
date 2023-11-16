@@ -17,8 +17,10 @@ let bdUser = [
 // 	console.log(bdUser[i].pass)
 //   }
 
+// Validando os dados de login de acordo com a array
+const btnFazerLogin = document.getElementById('bot1')
 
-function pegarUserPass(){
+btnFazerLogin.addEventListener('click',()=>{
 
 	let inputUser = document.getElementById('login-usuario').value;
 	let inputPass = document.getElementById('login-senha').value;
@@ -44,5 +46,5 @@ function pegarUserPass(){
 		let inputPass = document.getElementById('login-senha')
 		inputPass.value = ''
 	}
-}
+})
 
