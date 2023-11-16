@@ -30,7 +30,7 @@ function pegarUserPass(){
 		if (bdUser[i].user === inputUser && bdUser[i].pass === inputPass) {
 		credenciaisValidas = true;
 		break; // Para a iteração assim que as credenciais válidas forem encontradas
-		}
+			}
   	}
 
 	if (inputUser === '' || inputPass === '') {
@@ -43,6 +43,6 @@ function pegarUserPass(){
 		inputUser.value = ''
 		let inputPass = document.getElementById('login-senha')
 		inputPass.value = ''
-	  }
+	}
 }
 
