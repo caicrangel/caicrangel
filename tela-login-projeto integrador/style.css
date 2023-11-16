@@ -2,12 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   height: 100vh;
   display: grid;
+  background-color: #d79c8f;
 }
 
 main {
@@ -43,12 +44,18 @@ form label {
   display: flex;
   gap: 30px;
   justify-content: space-around;
+  align-items: center;
 }
 
 #botoes button {
   width: 100px;
   height: 40px;
   margin-top: 2rem;
+}
+
+#botoes a{
+  padding-top: 30px;
+  color: black;
 }
 
 input {
