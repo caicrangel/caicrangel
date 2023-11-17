@@ -307,3 +307,23 @@ function bloqueiaEnter(input){
 botaoEnviar.addEventListener('click',()=>{
 	enviarFormulario()
 })
+
+//Salvando os dados necessários para login no bdUser
+
+document.getElementById('form-cadastro').addEventListener('submit', function(event) {
+	// Impedir o envio padrão do formulário
+	event.preventDefault();
+
+	// Obter os valores dos campos
+	var usernameInput = document.getElementById('campo1').value;
+	var campo2Value = document.getElementById('campo2').value;
+
+	// Adicionar os dados ao array existente
+	arrayExistente.push({
+			usernameInput: campo1Value,
+			campo2: campo2Value
+	});
+
+	// Exibir o array (você pode fazer algo mais útil com ele)
+	console.log(arrayExistente);
+});
