@@ -1,3 +1,5 @@
+//=============== Validando tela de login =============== 
+
 let bdUser = [
 	{user: 'caic',
 	 pass: '1234',
@@ -48,10 +50,7 @@ btnFazerLogin.addEventListener('click',()=>{
 	}
 })
 
-//Mostrando o formulário por cima da tela de login
-
-
-
+//=============== Mostrando o formulário por cima da tela de login =============== 
 
 
 function mostrarFormulario() {
@@ -78,19 +77,7 @@ function bloqueiaEnter(input){
 			}
 			})
 	}
-		
-	// function mostrarBotEnviar(input){
-	// 		input.addEventListener('blur',() =>{
-	// 				 if (confirmSenhaInput.value !== '' ) {
-	// 						 botEnviar.classList.add('visible')
-	// 				 }else{
-	// 						 botEnviar.classList.remove('visible')
-	// 				 }
-	// 		 })
-			 
-	//  }
-	
-	
+			
 	// ---------- VALIDAÇÃO USERNAME ---------- //
 	let usernameLabel = document.querySelector('label[for="username"]');
 	let usernameInput = document.getElementById("username");
