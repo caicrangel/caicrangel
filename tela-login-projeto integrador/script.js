@@ -21,8 +21,10 @@ let bdUser = [
 
 // Validando os dados de login de acordo com a array
 const btnFazerLogin = document.getElementById('bot1')
-
 btnFazerLogin.addEventListener('click',()=>{
+	
+	const textUserInvalido = document.getElementById('userInvalido')
+	const textSenhaInvalido = document.getElementById('senhaIncorreta')
 
 	let inputUser = document.getElementById('login-usuario').value;
 	let inputPass = document.getElementById('login-senha').value;
@@ -38,17 +40,38 @@ btnFazerLogin.addEventListener('click',()=>{
   	}
 
 	if (inputUser === '' || inputPass === '') {
-		alert('Usuário ou senha vazios!');
+		// alert('Usuário ou senha vazios!');
+		textUserInvalido.innerText = 'Campo obrigatório!'
+		textUserInvalido.style.color = 'red'
+		textSenhaInvalido.innerText = 'Campo obrigatório!'
+		textSenhaInvalido.style.color = 'red'
 	}else if (credenciaisValidas) {
 		window.location.href = 'login.html';
 	}else{
-		alert('Credenciais invalida!!!')
 		let inputUser = document.getElementById('login-usuario')
 		inputUser.value = ''
 		let inputPass = document.getElementById('login-senha')
 		inputPass.value = ''
+		textSenhaInvalido.innerText = 'Usuário ou senha invalidos!'
+		textSenhaInvalido.style.color = 'red'
 	}
 })
+
+
+let inputPass = document.getElementById('login-senha')
+
+const inputUser = document.getElementById('login-usuario')
+const textUserInvalido = document.getElementById('userInvalido')
+const textSenhaInvalido = document.getElementById('senhaIncorreta')
+inputUser.addEventListener('focus',()=>{
+	textUserInvalido.innerText = ''
+	textSenhaInvalido.innerText = ''
+})
+inputPass.addEventListener('focus',()=>{
+	textUserInvalido.innerText = ''
+	textSenhaInvalido.innerText = ''
+})
+
 
 //=============== Mostrando o formulário por cima da tela de login =============== 
 
