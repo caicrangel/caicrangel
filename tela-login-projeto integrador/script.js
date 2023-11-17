@@ -9,16 +9,6 @@ let bdUser = [
 	},
 ];
 
-// bdUser.push({
-// 	user: 'pedro',
-// 	pass: '5858'
-// })
-
-// for (let i = 0; i < bdUser.length; i++) {
-// 	console.log(bdUser[i].user)
-// 	console.log(bdUser[i].pass)
-//   }
-
 // Validando os dados de login de acordo com a array
 const btnFazerLogin = document.getElementById('bot1')
 btnFazerLogin.addEventListener('click',()=>{
@@ -308,22 +298,20 @@ botaoEnviar.addEventListener('click',()=>{
 	enviarFormulario()
 })
 
-// //Salvando os dados necessários para login no bdUser
+//Salvando os dados necessários para login no bdUser
 
-// document.getElementById('form-cadastro').addEventListener('submit', function(event) {
-// 	// Impedir o envio padrão do formulário
-// 	event.preventDefault();
+document.getElementById('form-cadastro').addEventListener('submit', function(event) {
+	event.preventDefault();
 
-// 	// Obter os valores dos campos
-// 	var usernameInput = document.getElementById('campo1').value;
-// 	var campo2Value = document.getElementById('campo2').value;
+	// Obtendo os valores dos campos
+	const usernameInput = document.getElementById('username').value;
+	const senhaInput = document.getElementById('senha').value;
 
-// 	// Adicionar os dados ao array existente
-// 	arrayExistente.push({
-// 			usernameInput: campo1Value,
-// 			campo2: campo2Value
-// 	});
+	// Adicionar os dados ao array
+	bdUser.push({
+			user: usernameInput,
+			pass: senhaInput
+	});
 
-// 	// Exibir o array (você pode fazer algo mais útil com ele)
-// 	console.log(arrayExistente);
-// });
+	console.log(bdUser);
+});
