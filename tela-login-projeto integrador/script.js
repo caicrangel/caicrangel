@@ -85,10 +85,10 @@ function fecharFormulario() {
 }
 
 function enviarFormulario() {
-	// Lógica para processar o formulário aqui
 	alert("Formulário enviado com sucesso!");
 	fecharFormulario();
 }
+// =================== Fim ========================
 
 //Script da tela de cadastro
 
@@ -295,6 +295,7 @@ function bloqueiaEnter(input){
 			if (senhaConfirmacao === '') {
 					confirmSenhaInput.classList.remove('correct')
 					confirmSenhaInput.classList.remove('error')
+					botaoEnviar.setAttribute('disabled', 'disabled');
 			}  
 	
 			if (senhaConfirmacao === senhaPrimeiroCampo) {
@@ -303,27 +304,26 @@ function bloqueiaEnter(input){
 	})
 	bloqueiaEnter(confirmSenhaInput)
 
-
 botaoEnviar.addEventListener('click',()=>{
 	enviarFormulario()
 })
 
-//Salvando os dados necessários para login no bdUser
+// //Salvando os dados necessários para login no bdUser
 
-document.getElementById('form-cadastro').addEventListener('submit', function(event) {
-	// Impedir o envio padrão do formulário
-	event.preventDefault();
+// document.getElementById('form-cadastro').addEventListener('submit', function(event) {
+// 	// Impedir o envio padrão do formulário
+// 	event.preventDefault();
 
-	// Obter os valores dos campos
-	var usernameInput = document.getElementById('campo1').value;
-	var campo2Value = document.getElementById('campo2').value;
+// 	// Obter os valores dos campos
+// 	var usernameInput = document.getElementById('campo1').value;
+// 	var campo2Value = document.getElementById('campo2').value;
 
-	// Adicionar os dados ao array existente
-	arrayExistente.push({
-			usernameInput: campo1Value,
-			campo2: campo2Value
-	});
+// 	// Adicionar os dados ao array existente
+// 	arrayExistente.push({
+// 			usernameInput: campo1Value,
+// 			campo2: campo2Value
+// 	});
 
-	// Exibir o array (você pode fazer algo mais útil com ele)
-	console.log(arrayExistente);
-});
+// 	// Exibir o array (você pode fazer algo mais útil com ele)
+// 	console.log(arrayExistente);
+// });
