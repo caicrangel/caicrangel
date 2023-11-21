@@ -7,16 +7,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <script src="script.js" defer></script>
     <title>Reserva de Restaurantes</title>
 </head>
 <body>
-
     <header>
-      <div>
+      <div id="logo-sair">
         <img id="logo" src="img-restaurantes/logo.png" alt="logo do site">
       </div>
     </header>
+
+    <div class="menu">
+      <ul>
+        <li id="menu-sair">
+          <i class="fas fa-door-open"></i> Sair
+        </li>
+      </ul>
+    </div>
 
   <section id="restaurant-list-section">
     <h2>Lista de Restaurantes</h2>
@@ -51,7 +59,7 @@
       <span class="close" onclick="fecharCaixa()">&times;</span>
       <p>Sua reserva foi concluída! Aguardamos você &#x1F600 </p>
       <div id="resumo">
-        
+
       </div>
     </div>
   </div>

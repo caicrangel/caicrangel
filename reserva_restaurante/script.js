@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
     { id:'0001', nome: 'Restaurante 1', descricao: 'Comida deliciosa', foto: './img-restaurantes/rest1.jpg', localizacao: 'Rua 1', valor: 70 },
     { id:'0002', nome: 'Restaurante 2', descricao: 'Ótima vista', foto: './img-restaurantes/rest2.jpg', localizacao: 'Rua 2', valor: 40 },
     { id:'0003', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest3.jpg', localizacao: 'Rua 3', valor: 80 },
-    { id:'0004', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest4.jpg', localizacao: 'Rua 3', valor: 100 },
-    { id:'0005', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest5.jpg', localizacao: 'Rua 3', valor: 50 },
-    { id:'0006', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest6.jpg', localizacao: 'Rua 3', valor: 60 }
+    { id:'0004', nome: 'Restaurante 4', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest4.jpg', localizacao: 'Rua 3', valor: 100 },
+    { id:'0005', nome: 'Restaurante 5', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest5.jpg', localizacao: 'Rua 3', valor: 50 },
+    { id:'0006', nome: 'Restaurante 6', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest6.jpg', localizacao: 'Rua 3', valor: 60 }
 ];
 
 
@@ -193,3 +193,16 @@ function fecharCaixa() {
   const caixa = document.getElementById('reservaConcluidaCaixa');
   caixa.style.display = 'none';
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btnSair = document.getElementById('menu-sair');
+
+  btnSair.addEventListener('click', function () {
+    // Adicione aqui o código para lidar com a ação de sair
+    console.log('Usuário clicou em sair');
+
+    // Exemplo: redirecionar para a página de login
+    window.location.href = 'pagina-de-login.html';
+  });
+});

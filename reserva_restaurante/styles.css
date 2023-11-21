@@ -7,8 +7,8 @@ body {
 
 header {
   background: linear-gradient(to bottom,rgb(240, 239, 239), white);
-  padding: 10px;
-  height: 150px;
+  padding: 5px;
+  height: 115px;
   position: relative;
 }
 header::before {
@@ -21,14 +21,15 @@ header::before {
   left: 0;
 }
 
-header div{
+header #logo-sair{
   display: flex;
   justify-content: center;
 }
 
+
 #logo{
-  width: 250px;
-  height: 150px;
+  width: 200px;
+  height: 120px;
 }
 
 section {
@@ -333,3 +334,36 @@ input::-webkit-inner-spin-button {
 .caixa .close:focus {
   color: black;
 }
+
+
+/* Estilização do botão sair */
+
+.menu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #333; /* Cor de fundo do menu */
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: none; /* Oculta por padrão */
+  cursor: pointer;
+  color: #fff; /* Cor do texto */
+}
+
+.menu:hover li {
+  display: block; /* Exibe ao passar o mouse no menu */
+}
+
+/* .menu li:hover {
+  background-color: #555; 
+} */
