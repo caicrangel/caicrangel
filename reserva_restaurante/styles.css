@@ -165,6 +165,7 @@ img{
 }
 
 .modal-content {
+
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -225,6 +226,11 @@ img{
     max-width: 400px;
 }
 
+#bot-reservar{
+  display: flex;
+  justify-content: center;
+}
+
 /* Formatação da linha que divide o site */
 
 .gradient-line {
@@ -242,9 +248,9 @@ img{
 }
 
 .item-carrinho {
-  background-color: lightseagreen;
-  margin-right: 2rem;
-  padding: 1rem 1.5rem;
+  background-color: #d79c8f;
+  padding-top: 20px;
+  padding-left: 45px;
   width: 300px;
   border-radius: 8px;
 }
@@ -258,7 +264,6 @@ img{
 }
 
 .capa::after {
-  content: "Capa";
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -268,6 +273,12 @@ img{
 .inputCarrinho {
   width: 40px;
   text-align: center;
+  border-radius: 5px;
+}
+
+#data-selecionada{
+  width: 150px;
+  border-radius: 5px;
 }
 
 input::-webkit-outer-spin-button,
@@ -278,4 +289,47 @@ input::-webkit-inner-spin-button {
 
 #subtotal {
   font-size: 1.2rem;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Estilo da caixa de reserva concluída */
+
+.caixa {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9); /* Fundo semitransparente */
+  backdrop-filter: blur(5px); /* Efeito de desfoque */
+  z-index: 9999;
+  text-align: center;
+}
+
+.caixa-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: solid black 2px;
+  border-radius: 10px;
+}
+
+.caixa .close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.caixa .close:hover,
+.caixa .close:focus {
+  color: black;
 }
