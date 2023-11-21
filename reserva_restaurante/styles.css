@@ -149,7 +149,7 @@ img{
 
 
 
-/* CSS carrinho */
+/* CSS container do carrinho */
 
 /* Estilos para abertura do carrinho */
 .modal {
@@ -235,3 +235,47 @@ img{
 }
 
 
+/* CSS do carrinho */
+
+#carrinho {
+  display: flex;
+}
+
+.item-carrinho {
+  background-color: lightseagreen;
+  margin-right: 2rem;
+  padding: 1rem 1.5rem;
+  width: 300px;
+  border-radius: 8px;
+}
+
+.capa {
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  background-color: lightgray;
+  position: relative;
+}
+
+.capa::after {
+  content: "Capa";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.inputCarrinho {
+  width: 40px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#subtotal {
+  font-size: 1.2rem;
+}

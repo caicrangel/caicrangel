@@ -30,10 +30,23 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Carrinho de compras</h2>
-        <form id="reservation-form">
-            <!-- Adicione campos para a reserva -->
-            <button type="submit">Reservar</button>
-        </form>
+        <section id="carrinho">
+          <div class="item-carrinho" id="produto-01">
+            <div class="capa"></div>
+            <h3>Dom Casmurro</h3>
+            <h4>Machado de Assis</h4>
+            <p>Valor: R$11.66</p>
+            <button id="btn-subtrair-produto-01">-</button>
+            <input class="inputCarrinho" id="quantidade-produto-01" type="number" value="1" min="0">
+            <button id="btn-adicionar-produto-01">+</button>
+            <button id="btn-excluir-produto-01">EXCLUIR</button>
+          </div>
+        </section>
+        <h2>Subtotal</h2>
+        <section id="subtotal">
+          <p><span id="quantidade-subtotal">0</span></p>
+          <p>R$ <span id="valor-subtotal">0</span></p>
+      </section>
     </div>
   </div>
    

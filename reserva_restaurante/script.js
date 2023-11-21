@@ -42,18 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Carrinho...
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Seu código JavaScript existente
-
-  // Simulação de dados fictícios de restaurantes
+// Simulação de dados fictícios de restaurantes
   const restaurantes = [
-      { nome: 'Restaurante 1', descricao: 'Comida deliciosa', foto: './img-restaurantes/rest1.jpg', localizacao: 'Rua 1' },
-      { nome: 'Restaurante 2', descricao: 'Ótima vista', foto: './img-restaurantes/rest2.jpg', localizacao: 'Rua 2' },
-      { nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest3.jpg', localizacao: 'Rua 3' },
-      { nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest4.jpg', localizacao: 'Rua 3' },
-      { nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest5.jpg', localizacao: 'Rua 3' },
-      { nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest6.jpg', localizacao: 'Rua 3' }
-  ];
+    { id:'0001', nome: 'Restaurante 1', descricao: 'Comida deliciosa', foto: './img-restaurantes/rest1.jpg', localizacao: 'Rua 1' },
+    { id:'0002', nome: 'Restaurante 2', descricao: 'Ótima vista', foto: './img-restaurantes/rest2.jpg', localizacao: 'Rua 2' },
+    { id:'0003', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest3.jpg', localizacao: 'Rua 3' },
+    { id:'0004', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest4.jpg', localizacao: 'Rua 3' },
+    { id:'0005', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest5.jpg', localizacao: 'Rua 3' },
+    { id:'0006', nome: 'Restaurante 3', descricao: 'Cozinha internacional', foto: './img-restaurantes/rest6.jpg', localizacao: 'Rua 3' }
+];
+
+
+document.addEventListener('DOMContentLoaded', function () {
   const restaurantList = document.getElementById('restaurant-list');
 
   // Preencher a lista de restaurantes
@@ -64,26 +64,29 @@ document.addEventListener('DOMContentLoaded', function () {
           <p>${restaurante.descricao}</p>
           <img id="restArray" src="${restaurante.foto}" alt="${restaurante.nome}" />
           <p>Localização: ${restaurante.localizacao}</p>
-          <button class="reservar-btn" onclick="openModal()">Reservar</button>
+          <button id="${restaurante.id}" class="reservar-btn" onclick="openModal()">Reservar</button>
       `;
       restaurantList.appendChild(listItem);
   });
 
-  // Adicione um evento de envio para o formulário de reserva
-  const reservationForm = document.getElementById('reservation-form');
-  reservationForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-      // Lógica de reserva aqui (enviar para o servidor, etc.)
-      closeModal();
-  });
+ 
 
-  // Adicione um evento de clique para abrir o modal quando o botão "Reservar" é clicado
-  restaurantList.addEventListener('click', function (event) {
-      const target = event.target;
-      if (target.classList.contains('reservar-btn')) {
-          openModal();
-      }
-  });
+  // // Adicione um evento de envio para o formulário de reserva
+  // const reservationForm = document.getElementById('reservation-form');
+  // reservationForm.addEventListener('submit', function (event) {
+  //     event.preventDefault();
+  //     // Lógica de reserva aqui (enviar para o servidor, etc.)
+  //     closeModal();
+  // });
+
+  // // Adicione um evento de clique para abrir o modal quando o botão "Reservar" é clicado
+  // restaurantList.addEventListener('click', function (event) {
+  //     const target = event.target;
+  //     if (target.classList.contains('reservar-btn')) {
+  //         openModal();
+  //     }
+  // });
+
 });
 
 function openModal() {
@@ -95,3 +98,77 @@ function closeModal() {
   const reservationModal = document.getElementById('reservation-modal');
   reservationModal.style.display = 'none';
 }
+
+
+
+//Script do carrinho de compras
+
+
+// //percorrendo array restaurantes
+// const btn = document.querySelector('.reservar-btn');
+
+// for (let i = 0; i < btn.length; i++) { 
+//   console.log(btn[i].id);  
+
+//   // if (restaurantes[i].id === '0001') {
+    
+//   //   capaRest.innerHTML = `
+//   //     <img id="restArray" src="${restaurantes[i].foto}" alt="${restaurantes[i].descricao}">
+//   //     `
+//   //   break;
+
+//   // }
+// }
+
+
+
+
+let subtotalInfo = {
+    quantidade: 1,
+    valor: 11.66,
+  };
+  let botaoAdd = document.querySelector('#btn-adicionar-produto-01')
+  let botaoSubtrair = document.querySelector('#btn-subtrair-produto-01')
+  let qtdProdutos = document.querySelector('#quantidade-produto-01')
+  qtdProdutos.value = 0
+  contagem = 0
+  
+  botaoAdd.addEventListener('click',() => {
+    contagem = contagem +1
+    qtdProdutos.value = contagem
+    atualizarQuantidadeSubtotal();
+  })
+  
+  botaoSubtrair.addEventListener('click',() => {
+    if(contagem > 0){
+      contagem = contagem -1
+    qtdProdutos.value = contagem
+    atualizarQuantidadeSubtotal();
+    }
+  })
+  
+  let excluirProdutos = document.querySelector('#btn-excluir-produto-01')
+  
+  excluirProdutos.addEventListener('click',() =>{
+    contagem = 0
+    qtdProdutos.value = contagem
+    atualizarQuantidadeSubtotal();
+  })
+  
+  qtdProdutos.addEventListener('blur',() =>{
+    contagem = qtdProdutos.value
+    atualizarQuantidadeSubtotal();
+  
+  })
+  
+  let quantidadeSubtotal = document.getElementById("quantidade-subtotal");
+  let valorSubtotal = document.getElementById("valor-subtotal");
+  
+  function atualizarQuantidadeSubtotal() {
+  const inputItens = qtdProdutos.value > 1 ? ' Itens' : ' Item'
+  quantidadeSubtotal.innerText = qtdProdutos.value + inputItens;
+  let calc = qtdProdutos.value * subtotalInfo.valor
+  valorSubtotal.innerText = calc.toFixed(2);
+  }
+  
+  
